@@ -48,3 +48,22 @@ public class Main {
         }
     }
 }
+
+//modified solution funciton with O(n^2)
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer>num_map=new HashMap<>();
+
+        for(int i=0; i<nums.length; i++){
+          int comp = target - nums[i];
+          if (num_map.containsKey(comp)){
+              return new int[] {num_map.get(comp),i};
+          }
+          num_map.put(nums[i],i);
+
+        }
+        throw new IllegalArgumentException("no match found");
+    }
+}
+
+https://leetcode.com/problems/two-sum/submissions/1103123089
